@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Product Dashboard - 2440304031</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>UMKM Borneo Store Dashboard</h1>
+            <p>Nama: MOH ILHAM | NPM: 2440304031 </p>
+            <button id="theme-toggle" class="btn-theme">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Bagian Analisis Data Wajib -->
+        <section class="card analytics-section">
+            <h2>📊 Analisis Data Produk</h2>
+            <div id="analytics-content" class="analytics-grid">
+                <p>Memuat analisis data...</p>
+            </div>
+        </section>
+
+        <!-- Bagian Kontrol & Data Utama -->
+        <section class="card dashboard-section">
+            <div class="dashboard-header">
+                <h2>Daftar Produk UMKM</h2>
+                <div class="pagination-controls">
+                    <label for="limit-select">Tampilkan:</label>
+                    <select id="limit-select">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading, Error & Success State -->
+            <div id="loading-state" class="state-msg hidden">Sedang memuat data dari server...</div>
+            <div id="error-state" class="state-msg hidden"></div>
+
+            <!-- Grid Produk -->
+            <div id="product-grid" class="product-grid"></div>
+
+            <!-- Navigasi Pagination -->
+            <div id="pagination-nav" class="pagination-nav"></div>
+        </section>
+
+        <!-- Bagian Form & Validasi (Z = 1: Email valid + konfirmasi email) -->
+        <section class="card form-section">
+            <h2>✉️ Pendaftaran / Kontak Partner UMKM</h2>
+            <form id="partner-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email Utama:</label>
+                    <input type="email" id="email" required placeholder="contoh@email.com">
+                    <small class="error-msg" id="error-email"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-email">Konfirmasi Email:</label>
+                    <input type="email" id="confirm-email" required placeholder="Ulangi email Anda">
+                    <small class="error-msg" id="error-confirm-email"></small>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pendaftaran</button>
+                <div id="form-success" class="success-msg hidden">Formulir berhasil divalidasi dan dikirim!</div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 - Pemrograman Web | Program Studi Teknik Komputer UBT</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
